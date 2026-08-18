@@ -202,8 +202,13 @@
     };
   }
 
+  var scratchReveal = document.getElementById('scratchReveal');
+
   function scratch(e) {
     if (!isDrawing) return;
+    if (scratchReveal && !scratchReveal.classList.contains('revealing')) {
+      scratchReveal.classList.add('revealing');
+    }
     var p = getPos(e, canvas);
 
     ctx.save();
@@ -231,6 +236,7 @@
     }
     if (transparent / total > 0.48) {
       revealed = true;
+      if (scratchReveal) scratchReveal.classList.add('revealed');
       // Wipe remaining canvas smoothly
       setTimeout(function () {
         ctx.clearRect(0, 0, W, H);

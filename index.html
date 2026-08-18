@@ -62,8 +62,11 @@
       <p class="cover-date">19 &middot; 09 &middot; 2026</p>
 
       <button id="open-btn" class="btn-open-invitation" type="button" aria-label="Open the wedding invitation">
-        <span class="btn-icon">&#9993;</span>
-        Open Invitation
+        <svg class="btn-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+          <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+        <span>Open Invitation</span>
       </button>
       <p class="cover-hint">Tap to begin &nbsp;&bull;&nbsp; Insha Allah</p>
     </div>
@@ -118,18 +121,22 @@
       <!-- Bride -->
       <div class="hero-couple-group">
         <h2 class="hero-couple-name">Rinshi Ibrahim</h2>
-        <p class="hero-bride-house">Koya Manzil</p>
-        <p class="hero-bride-sub">Daughter of</p>
-        <p class="hero-bride-parent">Koyali Parambil</p>
+        <p class="hero-parent-line">Daughter of Koyali Parambil</p>
       </div>
 
-      <!-- Date & Time -->
+      <div class="hero-ornament-btm" aria-hidden="true">
+        <span></span><i>❦</i><span></span>
+      </div>
+
+      <!-- Date & Venue block -->
       <div class="hero-date-block">
-        <div class="hero-date-row"> 
-          <span class="hero-date-num">19 <span class="dot">•</span> 09 <span class="dot">•</span> 2026</span>
-          
+        <div class="hero-date-row">
+          <span class="hero-date-day">Saturday</span>
+          <span class="hero-date-num">19</span>
+          <span class="hero-date-my">September<br>2026</span>
         </div>
-        <p class="hero-time-text">SATURDAY &nbsp;|&nbsp; 7:00 PM</p>
+        <p class="hero-time-loc">7:00 PM GST &nbsp;&bull;&nbsp; Abu Dhabi, UAE</p>
+        <p class="hero-insha-tag">Insha Allah</p>
       </div>
 
       <!-- Scroll cue -->
@@ -155,10 +162,6 @@
 
     <p class="invitation-body fade-in">
       In the name of Allah, the Most Beneficent, the Most Merciful.<br><br>
-      <!-- With the blessings of Allah, we joyfully announce the wedding of our beloved
-      <span class="name-highlight">Imthiyas Muhammed Rafi</span>
-      with <span class="sub-highlight">Rinshi Ibrahim</span>
-      <em>(Daughter of Koyali Parambil, Changaramkulam)</em>.<br><br> -->
       You are warmly invited to join us and share in our joy as we begin this blessed journey together.
       Your gracious presence and prayers will make our celebration truly blessed.
     </p>
@@ -199,36 +202,67 @@
 
         <!-- Hint shown until scratching begins -->
         <div class="scratch-hint" id="scratchHint">
-          <span class="scratch-finger">👆</span>
+          <svg class="scratch-finger-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="10" cy="2.5" r="1.2" fill="currentColor" opacity="0.8"/>
+            <path d="M7.5 4l-1-1M12.5 4l1-1M10 0.5v1.2" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+            <path d="M10 5.2v6.8l-2.2-1.5a1.5 1.5 0 0 0-2.1 2.2l4.6 5.2a4 4 0 0 0 3 1.6h3.2a3.4 3.4 0 0 0 3.4-3.4v-4.6a1.7 1.7 0 0 0-1.7-1.7H17v-1a1.7 1.7 0 0 0-1.7-1.7H14v-1.6a1.7 1.7 0 0 0-1.7-1.7h-.6a1.7 1.7 0 0 0-1.7 1.7z" fill="rgba(255,255,255,0.2)"/>
+          </svg>
           <span>Scratch here</span>
         </div>
       </div>
 
-      <p class="scratch-sub" id="scratchSub">Reveal a special surprise &nbsp;✨</p>
+      <p class="scratch-sub" id="scratchSub">Reveal a special surprise &nbsp;✦</p>
     </div>
 
     <!-- Event info cards -->
     <div class="event-cards fade-in">
       <div class="event-card">
-        <div class="card-icon">📅</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <circle cx="12" cy="15" r="1.2" fill="currentColor"></circle>
+          </svg>
+        </div>
         <div class="card-label">Wedding Day</div>
         <div class="card-value">Saturday<br>19 September 2026</div>
         <div class="card-sub">Insha Allah</div>
       </div>
       <div class="event-card">
-        <div class="card-icon">🕖</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
         <div class="card-label">Time</div>
         <div class="card-value">7:00 PM</div>
         <div class="card-sub">Evening</div>
       </div>
       <div class="event-card">
-        <div class="card-icon">🕌</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3c-2 2-3 4-3 6h6c0-2-1-4-3-6z" fill="currentColor" fill-opacity="0.2"></path>
+            <path d="M4 11h16v10H4z"></path>
+            <path d="M12 15c-1.5 0-2.5 1-2.5 2.5V21h5v-3.5c0-1.5-1-2.5-2.5-2.5z" fill="currentColor" fill-opacity="0.3"></path>
+            <path d="M7 11V7l1-1"></path>
+            <path d="M17 11V7l-1-1"></path>
+            <path d="M12 2v1"></path>
+          </svg>
+        </div>
         <div class="card-label">Venue</div>
         <div class="card-value">Andalusia Farm House</div>
         <div class="card-sub">Abu Dhabi, UAE</div>
       </div>
       <div class="event-card">
-        <div class="card-icon">🌙</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" fill-opacity="0.2"></path>
+            <polygon points="17 4 17.8 5.8 19.8 6.1 18.3 7.5 18.7 9.5 17 8.5 15.3 9.5 15.7 7.5 14.2 6.1 16.2 5.8 17 4" fill="currentColor" stroke="none"></polygon>
+          </svg>
+        </div>
         <div class="card-label">Invited By</div>
         <div class="card-value">Mohammed Rafi &amp; Rejina Rafi</div>
         <div class="card-sub">With family</div>
