@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400&family=Noto+Serif+Malayalam:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Noto+Serif+Malayalam:wght@300;400;500;600&family=Scheherazade+New:wght@400;700&display=swap"
     rel="stylesheet" />
 
   <!-- Stylesheet -->
@@ -76,7 +76,7 @@
   <div id="video-overlay" aria-label="Wedding intro video" role="dialog" aria-modal="true">
     <video id="reveal-video" playsinline webkit-playsinline preload="auto" disablepictureinpicture
       aria-label="Imthiyas and Rinshi wedding intro video">
-      <source src="Imthiyas&amp;Rinshi.mp4" type="video/mp4" />
+      <source src="imthiyas-rinshi.mp4" type="video/mp4" />
     </video>
     <div id="video-fade-mask" class="video-fade-out" aria-hidden="true"></div>
     <button id="skip-btn" class="btn-skip" type="button" aria-label="Skip intro video">Skip &rsaquo;</button>
@@ -84,21 +84,64 @@
 
 
   <!-- ══════════════════════════════════════════
-       SECTION 1 – HERO (full card image)
+       SECTION 1 – HERO (Balcony Backdrop with Details)
   ═══════════════════════════════════════════ -->
   <section id="hero" aria-label="Wedding invitation hero">
-    <div class="hero-bg" role="img" aria-label="Floral garden archway wedding invitation backdrop"></div>
+    <div class="hero-bg" role="img" aria-label="Lake view wedding invitation backdrop"></div>
     <div class="hero-overlay"></div>
 
-    <!-- Scroll cue -->
-    <button class="scroll-cue" onclick="document.getElementById('invitation').scrollIntoView({behavior:'smooth'})"
-      aria-label="Scroll down">
-      <span>SCROLL</span>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
-    </button>
+    <div class="hero-card fade-in">
+      <!-- Bismillah -->
+      <p class="hero-bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+      <div class="hero-ornament-top" aria-hidden="true">
+        <span></span><i>✦</i><span></span>
+      </div>
+
+      <!-- Small wish / request text -->
+      <p class="hero-wish-lead">Together with their families</p>
+      <!-- <p class="hero-wish-sub">We request the honour of your presence<br>at the wedding of</p> -->
+
+      <!-- Groom -->
+      <div class="hero-couple-group">
+        <h1 class="hero-couple-name">Imthiyas Muhammed Rafi</h1>
+        <p class="hero-parent-line">Son of Mohammed Rafi &amp; Rejina Rafi</p>
+      </div>
+
+      <!-- Ampersand divider -->
+      <div class="hero-amp-divider" aria-hidden="true">
+        <span class="amp-line"></span>
+        <span class="hero-amp">&amp;</span>
+        <span class="amp-line"></span>
+      </div>
+
+      <!-- Bride -->
+      <div class="hero-couple-group">
+        <h2 class="hero-couple-name">Rinshi Ibrahim</h2>
+        <p class="hero-bride-house">Koya Manzil</p>
+        <p class="hero-bride-sub">Daughter of</p>
+        <p class="hero-bride-parent">Koyali Parambil</p>
+      </div>
+
+      <!-- Date & Time -->
+      <div class="hero-date-block">
+        <div class="hero-date-row"> 
+          <span class="hero-date-num">19 <span class="dot">•</span> 09 <span class="dot">•</span> 2026</span>
+          
+        </div>
+        <p class="hero-time-text">SATURDAY &nbsp;|&nbsp; 7:00 PM</p>
+      </div>
+
+      <!-- Scroll cue -->
+      <button class="scroll-cue" onclick="document.getElementById('invitation').scrollIntoView({behavior:'smooth'})"
+        aria-label="Scroll down to explore">
+        <span>SCROLL</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
   </section>
 
 
@@ -112,13 +155,57 @@
 
     <p class="invitation-body fade-in">
       In the name of Allah, the Most Beneficent, the Most Merciful.<br><br>
-      With the blessings of Allah, we joyfully announce the wedding of our beloved
+      <!-- With the blessings of Allah, we joyfully announce the wedding of our beloved
       <span class="name-highlight">Imthiyas Muhammed Rafi</span>
       with <span class="sub-highlight">Rinshi Ibrahim</span>
-      <em>(Daughter of Koyali Parambil, Changaramkulam)</em>.<br><br>
+      <em>(Daughter of Koyali Parambil, Changaramkulam)</em>.<br><br> -->
       You are warmly invited to join us and share in our joy as we begin this blessed journey together.
       Your gracious presence and prayers will make our celebration truly blessed.
     </p>
+
+    <!-- Scratch-to-Reveal Heart placed before Event Info -->
+    <!-- SVG ClipPath definition for 100% full-fill heart shape -->
+    <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+      <defs>
+        <clipPath id="scratchHeartClip" clipPathUnits="objectBoundingBox">
+          <path d="M 0.5, 0.95 C 0.5, 0.95, 0.03, 0.64, 0.03, 0.31 C 0.03, 0.14, 0.15, 0.04, 0.28, 0.04 C 0.38, 0.04, 0.46, 0.11, 0.5, 0.21 C 0.54, 0.11, 0.62, 0.04, 0.72, 0.04 C 0.85, 0.04, 0.97, 0.14, 0.97, 0.31 C 0.97, 0.64, 0.5, 0.95, 0.5, 0.95 Z" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <div class="scratch-wrapper fade-in">
+      <p class="scratch-eyebrow">✦ Our Forever Begins ✦</p>
+      <h2 class="scratch-title">Scratch to Reveal</h2>
+      <div class="gold-divider"><span class="ornament">❧</span></div>
+
+      <!-- Canvas scratch card over heart reveal -->
+      <div class="scratch-card-container">
+
+        <!-- The revealed content (full fill heart + wedding date) -->
+        <div class="scratch-reveal" id="scratchReveal" aria-hidden="true">
+          <div class="reveal-date-inner">
+            <p class="reveal-you-invited">✦ You're Invited ✦</p>
+            <p class="reveal-date-num">19 · 09 · 2026</p>
+            <p class="reveal-day">Saturday</p>
+            <p class="reveal-time">7:00 PM GST</p>
+            <p class="reveal-location">Abu Dhabi, UAE</p>
+          </div>
+        </div>
+
+        <!-- Canvas drawn on top — user scratches this away -->
+        <canvas id="scratchCanvas" class="scratch-canvas"
+          aria-label="Scratch here to reveal the wedding date"
+          role="img"></canvas>
+
+        <!-- Hint shown until scratching begins -->
+        <div class="scratch-hint" id="scratchHint">
+          <span class="scratch-finger">👆</span>
+          <span>Scratch here</span>
+        </div>
+      </div>
+
+      <p class="scratch-sub" id="scratchSub">Reveal a special surprise &nbsp;✨</p>
+    </div>
 
     <!-- Event info cards -->
     <div class="event-cards fade-in">
@@ -147,6 +234,9 @@
         <div class="card-sub">With family</div>
       </div>
     </div>
+
+    <!-- Confetti canvas (full-screen, pointer-events:none) -->
+    <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
   </section>
 
 
@@ -247,9 +337,9 @@
   ═══════════════════════════════════════════ -->
   <section id="venue" aria-label="Wedding venue and location">
     <p class="insha fade-in">✦ Join Us Here ✦</p>
-    <h2 class="section-title fade-in" style="color:var(--cream)">The Venue</h2>
+    <h2 class="section-title fade-in">The Venue</h2>
     <div class="gold-divider fade-in">
-      <span class="ornament" style="color:var(--gold-light)">❧</span>
+      <span class="ornament">❧</span>
     </div>
 
     <div class="venue-card fade-in">
