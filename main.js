@@ -13,27 +13,64 @@
   var skipTimer = null;
   var dismissed = false;
 
-  /* ── Step 2: video ends or skip → directly go to hero ── */
+  /* ── Background music ── */
+  var bgAudio = new Audio('hulm-al-takhruj.mp3');
+  bgAudio.loop   = true;
+  bgAudio.volume = 0.75;
+
+  function playAudio() {
+    bgAudio.play().catch(function () { /* autoplay policy – silently ignore */ });
+  }
+
+  function stopAudio() {
+    bgAudio.pause();
+    bgAudio.currentTime = 0;
+  }
+
+  /* Stop when tab is hidden or closed */
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) stopAudio(); else playAudio();
+  });
+  window.addEventListener('pagehide',     stopAudio);
+  window.addEventListener('beforeunload', stopAudio);
+
+  /* ── Step 2: video ends or skip → crossfade into hero ── */
   function goToHero() {
     if (dismissed) return;
     dismissed = true;
 
     clearTimeout(skipTimer);
+    skipBtn.style.display = 'none';
 
-    // Instantly hide the video overlay
-    overlay.style.display = 'none';
+    // 1) Scroll hero into position instantly (no animation yet, it's hidden behind overlay)
+    hero.scrollIntoView({ behavior: 'instant' });
 
-    // Scroll smoothly to hero
-    hero.scrollIntoView({ behavior: 'smooth' });
+    // 2) Fade the white mask over the video (0 → 1 over 600 ms)
+    if (fadeMask) {
+      fadeMask.style.transition = 'opacity 0.6s ease';
+      fadeMask.classList.add('active');
+    }
 
-    // Clean up DOM
-    cover.remove();
-    overlay.remove();
+    // 3) After white mask covers video, fade the whole overlay out → reveals hero underneath
+    setTimeout(function () {
+      overlay.style.transition = 'opacity 0.7s ease';
+      overlay.style.opacity = '0';
+
+      // 4) After overlay gone, clean up DOM
+      setTimeout(function () {
+        overlay.style.display = 'none';
+        cover.remove();
+        overlay.remove();
+      }, 720);
+    }, 580);
   }
 
   /* ── Step 1: button click → hide cover, show & play video ── */
   function startVideo() {
     openBtn.disabled = true;
+
+    // Start background music
+    playAudio();
 
     // Instantly hide the cover
     cover.style.transition = 'opacity 0.35s ease';

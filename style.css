@@ -308,7 +308,7 @@ body {
   background: linear-gradient(135deg, #FCF9F5 0%, #F5EFEB 50%, #FCF9F5 100%);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.9s ease;
+  transition: opacity 0.6s ease;
   z-index: 5;
 }
 
@@ -442,6 +442,13 @@ body {
   font-style: italic;
   margin-top: 0.2rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+.hero-house-name {
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  letter-spacing: 0.06em;
 }
 
 /* Ampersand Divider */
@@ -1354,7 +1361,8 @@ body {
 }
 
 .venue-name {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
   font-size: clamp(2.4rem, 5.2vw, 3.5rem);
   color: var(--gold-rich);
   line-height: 1.2;
